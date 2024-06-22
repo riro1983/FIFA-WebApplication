@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+<a href="{{ url_for('index') }}">
+    <button class="sign-out">Sign Out</button>
+</a>
+<h1>Welcome, {{ username }}!</h1>
+<a href="{{ url_for('get_squads',username=username) }}">
+    <button>View Squads</button>
+</a>
+
+<a href="{{ url_for('search',username=username) }}">
+    <button>Search for Players!</button>
+</a>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

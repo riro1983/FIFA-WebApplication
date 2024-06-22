@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Saved Squads</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/saved_squads.css') }}">
+</head>
+<body>
+    <h1>Saved Squads for {{ username }}</h1>
+
+    {% if squads %}
+    <ul>
+        {% for squad in squads %}
+            <li>
+                <a href="{{ url_for('view_squad', squad_id=squad[0],username=username) }}">
+                    <button><strong>Squad ID:</strong> {{ squad[0] }}<br></button>
+                </a>
+                <button class="delete_button" squad-id="{{ squad[0] }}" onclick="delete_squad(this)">Delete Squad</button>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No saved squads found.</p>
+    {% endif %}
+
+    <a href="{{ url_for('get_formations', username=username) }}">
+        <button>Create New Squad</button>
+    </a>
+
+    <a href="{{ url_for('dashboard', username=username) }}">
+        <button>Back to Dashboard</button>
+    </a>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

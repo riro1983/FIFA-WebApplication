@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<heady>
+    <title>Search Players</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/search.css') }}">
+</heady>
+<body>
+    <button class="go-back"onclick="history.back()">Go Back</button>
+    <h1>Search Players</h1>
+    <div class ="search-container">
+        <div class="search-box">
+            <label for="playerName">Player Name:</label>
+            <input type="text" id="playerName" placeholder="Enter Player Name">
+        </div>
+        <div class="search-box">
+            <label for="position">Position:</label>
+            <input type="text" id="position" placeholder="Enter Player Position">
+        </div>
+        <div class="search-box">
+            <label for="club">Club:</label>
+            <input type="text" id="club" placeholder="Enter Player Club">
+        </div>
+        <div class="search-box">
+            <label for="league">League:</label>
+            <input type="text" id="league" placeholder="Enter Player League">
+        </div>
+        <div class="search-box">
+            <label for="nation">Nation:</label>
+            <input type="text" id="nation" placeholder="Enter Player Nation">
+        </div>
+        <div class="search-box">
+            <button onclick="searchPlayers()">Search</button>
+        </div>
+    </div>
+    <div class="table-container">
+    <table class="viewAllTable">
+        <thead class ="theadTable">
+            <tr class="rowTable">
+                <th>Player Name</th>
+                <th>Position</th>
+                <th>Club</th>
+                <th>League</th>
+                <th>Nation</th>
+                <th>Action Item</th>
+            </tr>
+        </thead>
+        <tbody id="table">
+        </tbody>
+    </table>
+    </div>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
